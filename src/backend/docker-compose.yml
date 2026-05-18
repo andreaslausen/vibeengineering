@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Zeiterfassung.API/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=Host=db;Database=zeiterfassung;Username=postgres;Password=postgres
+      - Jwt__Key=your_jwt_secret_key
+      - Jwt__Issuer=zeiterfassung
+      - Jwt__Audience=zeiterfassung_users
+    depends_on:
+      - db
+    networks:
+      - backend
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: zeiterfassung
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - backend
+volumes:
+  db_data:
+networks:
+  backend:
+    driver: bridge

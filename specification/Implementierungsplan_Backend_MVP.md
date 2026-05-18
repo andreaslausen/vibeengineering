@@ -31,7 +31,7 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 ---
 
 ## Fortschrittsstatus
-- Gesamtfortschritt: 10%
+- Gesamtfortschritt: 15%
 - Aktiver Meilenstein: 1 (Projektgrundlage und Solution-Struktur)
 - Nächster Schritt: 1.2 Grundkonfiguration
 ### 1.1 Solution und Projekte anlegen
@@ -50,12 +50,11 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - [x] Basiskonfiguration für appsettings erstellen.
 - [x] Entwicklungs-Konfiguration ergänzen.
 
-### 1.3 Docker-Basis
-- [ ] Dockerfile für API-Projekt anlegen.
-- [ ] docker-compose mit API + PostgreSQL anlegen.
-- [ ] Persistentes DB-Volume konfigurieren.
-- [ ] Environment-Variablen für DB/JWT dokumentieren.
-- [ ] Lokalen Start via docker-compose validieren.
+- [x] Dockerfile für API-Projekt anlegen.
+- [x] docker-compose mit API + PostgreSQL anlegen.
+- [x] Persistentes DB-Volume konfigurieren.
+- [x] Environment-Variablen für DB/JWT dokumentieren.
+- [x] Lokalen Start via docker-compose validieren.
 
 ### 1.4 Health und Observability-Basis
 - [ ] Health-Endpoint bereitstellen.
