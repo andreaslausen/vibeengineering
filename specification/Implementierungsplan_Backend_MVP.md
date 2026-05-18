@@ -32,8 +32,8 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 
 ## Fortschrittsstatus
 - Gesamtfortschritt: 36%
-- Aktiver Meilenstein: 2 (Domain-Modell und Persistenz)
-- Nächster Schritt: 2.2 DbContext mit Sets für User, TimeEntries, RefreshTokens erstellen
+- Aktiver Meilenstein: 2 (Domain-Modell, Domain-Tests und Persistenz)
+- Nächster Schritt: 2.2 Zeiterfassung.Domain.UnitTests erstellen und TimeEntry-Regeln testen
 ### 1.1 Solution und Projekte anlegen
 - [x] Root-Struktur gemäß Spezifikation prüfen/erstellen (backend + Teilprojekte).
 - [x] Solution-Datei erstellen.
@@ -63,7 +63,7 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 
 ---
 
-## Meilenstein 2 – Domain-Modell und Persistenz
+## Meilenstein 2 – Domain-Modell, Domain-Tests und Persistenz
 
 ### 2.1 Domain-Entitäten und Regeln
 - [x] Entität User modellieren.
@@ -72,20 +72,29 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - [x] Invarianten für TimeEntry implementieren (Ende nach Start, kein Start in Zukunft etc.).
 - [x] Regel zur Verhinderung überlappender Einträge modellieren.
 
-### 2.2 EF Core und DbContext
+### 2.2 Domain-Unit-Tests
+- [ ] Zeiterfassung.Domain.UnitTests erstellen.
+- [ ] Testpakete (xUnit, NSubstitute) in Zeiterfassung.Domain.UnitTests einbinden.
+- [ ] Basis-Teststruktur für Domänenobjekte erstellen.
+- [ ] Tests für Zeitinvarianten erstellen.
+- [ ] Tests für Dauerberechnung erstellen.
+- [ ] Tests für Overlap-Regeln erstellen.
+- [ ] Tests für Soft-Delete-relevante Domänenlogik erstellen.
+
+### 2.3 EF Core und DbContext
 - [ ] DbContext mit Sets für User, TimeEntries, RefreshTokens erstellen.
 - [ ] Fluent-Konfigurationen für alle Entitäten anlegen.
 - [ ] Unique-Constraints definieren (z. B. Username, Refresh-Token).
 - [ ] Indizes für typische Queries definieren (user_id, start_time, end_time, deleted_at).
 - [ ] Soft-Delete-Filter für TimeEntries konfigurieren.
 
-### 2.3 Migrationen
+### 2.4 Migrationen
 - [ ] Initiale Migration erzeugen.
 - [ ] UTC-konforme Spaltentypen prüfen.
 - [ ] Migration lokal gegen PostgreSQL ausführen.
 - [ ] Rollback-Szenario einmal validieren.
 
-### 2.4 Repositories / Datenzugriff
+### 2.5 Repositories / Datenzugriff
 - [ ] Repository-Interfaces in Application definieren.
 - [ ] Repository-Implementierungen in Infrastructure erstellen.
 - [ ] Queries für aktiven Zeiteintrag optimieren.
@@ -189,26 +198,19 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 
 ---
 
-## Meilenstein 7 – Unit Tests (Domain/Application)
+## Meilenstein 7 – Application Unit Tests und Coverage
 
-### 7.1 Testprojekte aufsetzen
-- [ ] Zeiterfassung.Domain.UnitTests erstellen.
+### 7.1 Application-Testprojekt aufsetzen
 - [ ] Zeiterfassung.Application.UnitTests erstellen.
-- [ ] Testpakete (xUnit, NSubstitute) einbinden.
+- [ ] Testpakete (xUnit, NSubstitute) in Zeiterfassung.Application.UnitTests einbinden.
 
-### 7.2 Domain-Testabdeckung
-- [ ] Tests für Zeitinvarianten erstellen.
-- [ ] Tests für Dauerberechnung erstellen.
-- [ ] Tests für Overlap-Regeln erstellen.
-- [ ] Tests für Soft-Delete-relevante Domänenlogik erstellen.
-
-### 7.3 Application-Testabdeckung
+### 7.2 Application-Testabdeckung
 - [ ] Tests für Register/Login/Refresh/Logout-Use-Cases erstellen.
 - [ ] Tests für Start/Stop-Idempotenz erstellen.
 - [ ] Tests für 409-Konfliktfälle erstellen.
 - [ ] Tests für List/Summary-Filterregeln erstellen.
 
-### 7.4 Coverage-Gate
+### 7.3 Coverage-Gate
 - [ ] Coverage-Tool integrieren (z. B. coverlet).
 - [ ] Verbindliches Coverage-Gate konfigurieren.
 - [ ] Build soll bei Unterschreitung fehlschlagen.
