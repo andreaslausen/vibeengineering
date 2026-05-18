@@ -31,9 +31,9 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 ---
 
 ## Fortschrittsstatus
-- Gesamtfortschritt: 15%
+- Gesamtfortschritt: 21%
 - Aktiver Meilenstein: 1 (Projektgrundlage und Solution-Struktur)
-- Nächster Schritt: 1.2 Grundkonfiguration
+- Nächster Schritt: 2.1 Entität User modellieren
 ### 1.1 Solution und Projekte anlegen
 - [x] Root-Struktur gemäß Spezifikation prüfen/erstellen (backend + Teilprojekte).
 - [x] Solution-Datei erstellen.
@@ -57,9 +57,9 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - [x] Lokalen Start via docker-compose validieren.
 
 ### 1.4 Health und Observability-Basis
-- [ ] Health-Endpoint bereitstellen.
-- [ ] DB-Healthcheck integrieren.
-- [ ] Logging-Grundkonfiguration (Serilog oder Microsoft Logging) setzen.
+- [x] Health-Endpoint bereitstellen.
+- [x] DB-Healthcheck integrieren.
+- [x] Logging-Grundkonfiguration (Serilog oder Microsoft Logging) setzen.
 
 ---
 

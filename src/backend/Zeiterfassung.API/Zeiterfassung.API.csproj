@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Npgsql" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="../Zeiterfassung.Application/Zeiterfassung.Application.csproj" />
     <ProjectReference Include="../Zeiterfassung.Domain/Zeiterfassung.Domain.csproj" />
     <ProjectReference Include="../Zeiterfassung.Infrastructure/Zeiterfassung.Infrastructure.csproj" />

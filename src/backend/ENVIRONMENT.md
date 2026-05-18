@@ -2,7 +2,7 @@
 
 ## API-Service
 - **ASPNETCORE_ENVIRONMENT**: Entwicklungsumgebung (z.B. Development)
-- **ConnectionStrings__Default**: Verbindungszeichenfolge zur PostgreSQL-Datenbank (z.B. Host=db;Database=zeiterfassung;Username=postgres;Password=postgres)
+- **ConnectionStrings__DefaultConnection**: Verbindungszeichenfolge zur PostgreSQL-Datenbank (z.B. Host=db;Database=zeiterfassung;Username=postgres;Password=postgres)
 - **Jwt__Key**: Geheimer Schlüssel für JWT-Signatur (z.B. your_jwt_secret_key)
 - **Jwt__Issuer**: JWT-Issuer (z.B. zeiterfassung)
 - **Jwt__Audience**: JWT-Audience (z.B. zeiterfassung_users)

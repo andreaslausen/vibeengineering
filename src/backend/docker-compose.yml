@@ -8,7 +8,7 @@ services:
       - "8080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__Default=Host=db;Database=zeiterfassung;Username=postgres;Password=postgres
+      - ConnectionStrings__DefaultConnection=Host=db;Database=zeiterfassung;Username=postgres;Password=postgres
       - Jwt__Key=your_jwt_secret_key
       - Jwt__Issuer=zeiterfassung
       - Jwt__Audience=zeiterfassung_users
