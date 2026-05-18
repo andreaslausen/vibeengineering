@@ -73,13 +73,13 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - [x] Regel zur Verhinderung überlappender Einträge modellieren.
 
 ### 2.2 Domain-Unit-Tests
-- [ ] Zeiterfassung.Domain.UnitTests erstellen.
-- [ ] Testpakete (xUnit, NSubstitute) in Zeiterfassung.Domain.UnitTests einbinden.
-- [ ] Basis-Teststruktur für Domänenobjekte erstellen.
-- [ ] Tests für Zeitinvarianten erstellen.
-- [ ] Tests für Dauerberechnung erstellen.
-- [ ] Tests für Overlap-Regeln erstellen.
-- [ ] Tests für Soft-Delete-relevante Domänenlogik erstellen.
+- [x] Zeiterfassung.Domain.UnitTests erstellen.
+- [x] Testpakete (xUnit, NSubstitute) in Zeiterfassung.Domain.UnitTests einbinden.
+- [x] Basis-Teststruktur für Domänenobjekte erstellen.
+- [x] Tests für Zeitinvarianten erstellen.
+- [x] Tests für Dauerberechnung erstellen.
+- [x] Tests für Overlap-Regeln erstellen.
+- [x] Tests für Soft-Delete-relevante Domänenlogik erstellen.
 
 ### 2.3 EF Core und DbContext
 - [ ] DbContext mit Sets für User, TimeEntries, RefreshTokens erstellen.
@@ -201,8 +201,8 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 ## Meilenstein 7 – Application Unit Tests und Coverage
 
 ### 7.1 Application-Testprojekt aufsetzen
-- [ ] Zeiterfassung.Application.UnitTests erstellen.
-- [ ] Testpakete (xUnit, NSubstitute) in Zeiterfassung.Application.UnitTests einbinden.
+- [x] Zeiterfassung.Application.UnitTests erstellen.
+- [x] Testpakete (xUnit, NSubstitute) in Zeiterfassung.Application.UnitTests einbinden.
 
 ### 7.2 Application-Testabdeckung
 - [ ] Tests für Register/Login/Refresh/Logout-Use-Cases erstellen.
