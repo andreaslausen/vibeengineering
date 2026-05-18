@@ -24,13 +24,15 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - Coverage-Ziel Domain/Application: verbindlich.
 
 ## Offene Architekturentscheidungen vor Start
-- [ ] Refresh-Token-Strategie final festlegen (empfohlen: Rotation + Reuse Detection).
-- [ ] Passwortregeln final festlegen (empfohlen: mind. 12 Zeichen + Blocklist kompromittierter Passwörter).
+## Architekturentscheidungen (final bestätigt)
+- [x] Refresh-Token-Strategie: Rotation + Reuse Detection
+- [x] Passwortregeln: Mindestens 12 Zeichen, Blocklist kompromittierter Passwörter
 
 ---
-
-## Meilenstein 1 – Projektgrundlage und Solution-Struktur
-
+## Fortschrittsstatus
+- Gesamtfortschritt: 5%
+- Aktiver Meilenstein: 1 (Projektgrundlage und Solution-Struktur)
+- Nächster Schritt: 1.1 Solution und Projekte anlegen
 ### 1.1 Solution und Projekte anlegen
 - [ ] Root-Struktur gemäß Spezifikation prüfen/erstellen (backend + Teilprojekte).
 - [ ] Solution-Datei erstellen.
