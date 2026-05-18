@@ -24,13 +24,11 @@ namespace Zeiterfassung.Infrastructure.Repositories
         public async Task AddAsync(TimeEntry entry)
         {
             await _context.TimeEntries.AddAsync(entry);
-            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(TimeEntry entry)
         {
             _context.TimeEntries.Update(entry);
-            await _context.SaveChangesAsync();
         }
 
         public async Task<bool> HasOverlapAsync(UserId userId, DateTime start, DateTime end, TimeEntryId? excludeId = null)
