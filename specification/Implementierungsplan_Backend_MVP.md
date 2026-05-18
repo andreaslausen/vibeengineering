@@ -31,9 +31,9 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 ---
 
 ## Fortschrittsstatus
-- Gesamtfortschritt: 21%
-- Aktiver Meilenstein: 1 (Projektgrundlage und Solution-Struktur)
-- Nächster Schritt: 2.1 Entität User modellieren
+- Gesamtfortschritt: 36%
+- Aktiver Meilenstein: 2 (Domain-Modell und Persistenz)
+- Nächster Schritt: 2.2 DbContext mit Sets für User, TimeEntries, RefreshTokens erstellen
 ### 1.1 Solution und Projekte anlegen
 - [x] Root-Struktur gemäß Spezifikation prüfen/erstellen (backend + Teilprojekte).
 - [x] Solution-Datei erstellen.
@@ -66,11 +66,11 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 ## Meilenstein 2 – Domain-Modell und Persistenz
 
 ### 2.1 Domain-Entitäten und Regeln
-- [ ] Entität User modellieren.
-- [ ] Entität TimeEntry modellieren (inkl. Soft-Delete-Felder).
-- [ ] Entität RefreshToken modellieren.
-- [ ] Invarianten für TimeEntry implementieren (Ende nach Start, kein Start in Zukunft etc.).
-- [ ] Regel zur Verhinderung überlappender Einträge modellieren.
+- [x] Entität User modellieren.
+- [x] Entität TimeEntry modellieren (inkl. Soft-Delete-Felder).
+- [x] Entität RefreshToken modellieren.
+- [x] Invarianten für TimeEntry implementieren (Ende nach Start, kein Start in Zukunft etc.).
+- [x] Regel zur Verhinderung überlappender Einträge modellieren.
 
 ### 2.2 EF Core und DbContext
 - [ ] DbContext mit Sets für User, TimeEntries, RefreshTokens erstellen.
