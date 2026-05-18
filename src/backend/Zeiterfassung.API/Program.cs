@@ -4,14 +4,12 @@ using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 using Zeiterfassung.Infrastructure;
 using Zeiterfassung.Infrastructure.Repositories;
 using Zeiterfassung.Domain.Repositories;
 using Zeiterfassung.Application.Services;
 using Zeiterfassung.Application.UseCases.Auth;
-using Zeiterfassung.Application.Dtos.Auth;
 using Zeiterfassung.API.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -91,6 +89,8 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("AuthenticatedUser", policy => policy.RequireAuthenticatedUser());
 });
 
+builder.Services.AddControllers();
+
 // Logging
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
@@ -126,124 +126,9 @@ app.UseAuthorization();
 
 // Health Check
 app.MapHealthChecks("/health");
+app.MapControllers();
 
 // Root-Endpoint
 app.MapGet("/", () => "Zeiterfassung.API läuft!");
-
-// Authentifizierungs-Endpoints
-var authGroup = app.MapGroup("/auth").WithTags("Auth");
-
-// POST /auth/register
-authGroup.MapPost("/register", async (RegisterRequestDto request, RegisterUseCase useCase, ZeiterfassungDbContext db) =>
-{
-    try
-    {
-        var response = await useCase.ExecuteAsync(request);
-        await db.SaveChangesAsync();
-        return Results.Created($"/auth/me", response);
-    }
-    catch (InvalidOperationException)
-    {
-        return Results.BadRequest(new { error = "Benutzername existiert bereits oder Passwort ungültig." });
-    }
-    catch
-    {
-        return Results.Problem("Ein Fehler ist aufgetreten.", statusCode: 500);
-    }
-});
-
-// POST /auth/login
-authGroup.MapPost("/login", async (LoginRequestDto request, LoginUseCase useCase, ZeiterfassungDbContext db) =>
-{
-    try
-    {
-        var response = await useCase.ExecuteAsync(request);
-        await db.SaveChangesAsync();
-        return Results.Ok(response);
-    }
-    catch (InvalidOperationException)
-    {
-        return Results.Unauthorized();
-    }
-    catch
-    {
-        return Results.Problem("Ein Fehler ist aufgetreten.", statusCode: 500);
-    }
-})
-.Produces(200)
-.Produces(401)
-.WithName("Login")
-.WithDescription("Login mit Benutzername und Passwort");
-
-// POST /auth/refresh
-authGroup.MapPost("/refresh", async (RefreshTokenRequestDto request, RefreshTokenUseCase useCase, ZeiterfassungDbContext db) =>
-{
-    try
-    {
-        var response = await useCase.ExecuteAsync(request);
-        await db.SaveChangesAsync();
-        return Results.Ok(response);
-    }
-    catch (InvalidOperationException)
-    {
-        return Results.Unauthorized();
-    }
-    catch
-    {
-        return Results.Problem("Ein Fehler ist aufgetreten.", statusCode: 500);
-    }
-})
-.WithName("RefreshToken")
-.WithDescription("Token aktualisieren (Refresh Token Rotation)");
-
-// POST /auth/logout
-authGroup.MapPost("/logout", async (LogoutRequestDto request, LogoutUseCase useCase, ZeiterfassungDbContext db) =>
-{
-    try
-    {
-        await useCase.ExecuteAsync(request.RefreshToken);
-        await db.SaveChangesAsync();
-        return Results.Ok(new { message = "Erfolgreich abgemeldet." });
-    }
-    catch (InvalidOperationException)
-    {
-        return Results.BadRequest(new { error = "Ungültiger Refresh Token." });
-    }
-    catch
-    {
-        return Results.Problem("Ein Fehler ist aufgetreten.", statusCode: 500);
-    }
-})
-.RequireAuthorization("AuthenticatedUser")
-.WithName("Logout")
-.WithDescription("Benutzer abmelden (aktuelle Session beenden)");
-
-// GET /auth/me
-authGroup.MapGet("/me", async (GetUserProfileUseCase useCase, HttpContext context) =>
-{
-    try
-    {
-        var userIdClaim = context.User.FindFirst(ClaimTypes.NameIdentifier)
-            ?? context.User.FindFirst("sub");
-        if (userIdClaim == null)
-        {
-            return Results.Unauthorized();
-        }
-
-        var response = await useCase.ExecuteAsync(userIdClaim.Value);
-        return Results.Ok(response);
-    }
-    catch (InvalidOperationException)
-    {
-        return Results.NotFound(new { error = "Benutzer nicht gefunden." });
-    }
-    catch
-    {
-        return Results.Problem("Ein Fehler ist aufgetreten.", statusCode: 500);
-    }
-})
-.RequireAuthorization("AuthenticatedUser")
-.WithName("GetProfile")
-.WithDescription("Benutzerprofil abrufen");
 
 app.Run();
