@@ -29,18 +29,19 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - [x] Passwortregeln: Mindestens 12 Zeichen, Blocklist kompromittierter Passwörter
 
 ---
+
 ## Fortschrittsstatus
-- Gesamtfortschritt: 5%
+- Gesamtfortschritt: 10%
 - Aktiver Meilenstein: 1 (Projektgrundlage und Solution-Struktur)
-- Nächster Schritt: 1.1 Solution und Projekte anlegen
+- Nächster Schritt: 1.2 Grundkonfiguration
 ### 1.1 Solution und Projekte anlegen
-- [ ] Root-Struktur gemäß Spezifikation prüfen/erstellen (backend + Teilprojekte).
-- [ ] Solution-Datei erstellen.
-- [ ] Projekt Zeiterfassung.API erstellen.
-- [ ] Projekt Zeiterfassung.Application erstellen.
-- [ ] Projekt Zeiterfassung.Domain erstellen.
-- [ ] Projekt Zeiterfassung.Infrastructure erstellen.
-- [ ] Projekt-Referenzen korrekt verdrahten.
+- [x] Root-Struktur gemäß Spezifikation prüfen/erstellen (backend + Teilprojekte).
+- [x] Solution-Datei erstellen.
+- [x] Projekt Zeiterfassung.API erstellen.
+- [x] Projekt Zeiterfassung.Application erstellen.
+- [x] Projekt Zeiterfassung.Domain erstellen.
+- [x] Projekt Zeiterfassung.Infrastructure erstellen.
+- [x] Projekt-Referenzen korrekt verdrahten.
 
 ### 1.2 Grundkonfiguration
 - [ ] Gemeinsame Build-Einstellungen definieren.
@@ -281,7 +282,3 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 
 ---
 
-## Fortschrittsstatus
-- Gesamtfortschritt: 0%
-- Aktiver Meilenstein: Noch keiner gestartet
-- Nächster Schritt: Offene Architekturentscheidungen final bestätigen
