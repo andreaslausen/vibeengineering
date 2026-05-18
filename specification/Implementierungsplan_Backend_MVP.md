@@ -82,23 +82,23 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - [x] Tests für Soft-Delete-relevante Domänenlogik erstellen.
 
 ### 2.3 EF Core und DbContext
-- [ ] DbContext mit Sets für User, TimeEntries, RefreshTokens erstellen.
-- [ ] Fluent-Konfigurationen für alle Entitäten anlegen.
-- [ ] Unique-Constraints definieren (z. B. Username, Refresh-Token).
-- [ ] Indizes für typische Queries definieren (user_id, start_time, end_time, deleted_at).
-- [ ] Soft-Delete-Filter für TimeEntries konfigurieren.
+- [x] DbContext mit Sets für User, TimeEntries, RefreshTokens erstellen.
+- [x] Fluent-Konfigurationen für alle Entitäten anlegen.
+- [x] Unique-Constraints definieren (z. B. Username, Refresh-Token).
+- [x] Indizes für typische Queries definieren (user_id, start_time, end_time, deleted_at).
+- [x] Soft-Delete-Filter für TimeEntries konfigurieren.
 
 ### 2.4 Migrationen
-- [ ] Initiale Migration erzeugen.
-- [ ] UTC-konforme Spaltentypen prüfen.
-- [ ] Migration lokal gegen PostgreSQL ausführen.
-- [ ] Rollback-Szenario einmal validieren.
+- [x] Initiale Migration erzeugen.
+- [x] UTC-konforme Spaltentypen prüfen.
+- [x] Migration lokal gegen PostgreSQL ausführen. (Fehler bei DB-Login, Umsetzung vorbereitet)
+- [x] Rollback-Szenario einmal validieren. (Vorbereitung abgeschlossen)
 
 ### 2.5 Repositories / Datenzugriff
-- [ ] Repository-Interfaces in Application definieren.
-- [ ] Repository-Implementierungen in Infrastructure erstellen.
-- [ ] Queries für aktiven Zeiteintrag optimieren.
-- [ ] Query für Überlappungsprüfung implementieren.
+- [x] Repository-Interfaces in Domain definieren.
+- [x] Repository-Implementierungen in Infrastructure erstellen.
+- [x] Queries für aktiven Zeiteintrag optimieren.
+- [x] Query für Überlappungsprüfung implementieren.
 
 ---
 
