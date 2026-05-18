@@ -31,9 +31,9 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 ---
 
 ## Fortschrittsstatus
-- Gesamtfortschritt: 36%
-- Aktiver Meilenstein: 2 (Domain-Modell, Domain-Tests und Persistenz)
-- Nächster Schritt: 2.2 Zeiterfassung.Domain.UnitTests erstellen und TimeEntry-Regeln testen
+- Gesamtfortschritt: 52%
+- Aktiver Meilenstein: 4 (Zeitbuchung Start/Stop und CRUD)
+- Nächster Schritt: 4.1 Start/Stop-Fachlogik implementieren (idempotent + 409-Regeln)
 ### 1.1 Solution und Projekte anlegen
 - [x] Root-Struktur gemäß Spezifikation prüfen/erstellen (backend + Teilprojekte).
 - [x] Solution-Datei erstellen.
@@ -105,31 +105,31 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 ## Meilenstein 3 – Authentifizierung und Session-Management
 
 ### 3.1 Registrierung
-- [ ] DTOs für Register-Request/Response anlegen.
-- [ ] Username- und Passwortvalidierung implementieren.
-- [ ] E-Mail optional validieren.
-- [ ] Passwort-Hashing integrieren.
-- [ ] Register-Use-Case implementieren.
+- [x] DTOs für Register-Request/Response anlegen.
+- [x] Username- und Passwortvalidierung implementieren.
+- [x] E-Mail optional validieren.
+- [x] Passwort-Hashing integrieren.
+- [x] Register-Use-Case implementieren.
 
 ### 3.2 Login
-- [ ] DTOs für Login-Request/Response anlegen.
-- [ ] Credential-Prüfung implementieren.
-- [ ] Access-Token-Erzeugung implementieren.
-- [ ] Refresh-Token-Erzeugung implementieren.
-- [ ] Persistenz des Refresh-Tokens pro Session/Gerät umsetzen.
+- [x] DTOs für Login-Request/Response anlegen.
+- [x] Credential-Prüfung implementieren.
+- [x] Access-Token-Erzeugung implementieren.
+- [x] Refresh-Token-Erzeugung implementieren.
+- [x] Persistenz des Refresh-Tokens pro Session/Gerät umsetzen.
 
 ### 3.3 Refresh und Logout
-- [ ] Refresh-Endpoint mit gewählter Token-Strategie implementieren.
-- [ ] Token-Rotation implementieren (falls entschieden).
-- [ ] Reuse-Detection implementieren (falls entschieden).
-- [ ] Logout für aktuelle Session implementieren.
-- [ ] Invalidierte/abgelaufene Tokens zuverlässig behandeln.
+- [x] Refresh-Endpoint mit gewählter Token-Strategie implementieren.
+- [x] Token-Rotation implementieren (falls entschieden).
+- [x] Reuse-Detection implementieren (falls entschieden).
+- [x] Logout für aktuelle Session implementieren.
+- [x] Invalidierte/abgelaufene Tokens zuverlässig behandeln.
 
 ### 3.4 Auth-Infrastruktur
-- [ ] JWT-Bearer-Auth in API konfigurieren.
-- [ ] Claims-Design festlegen (sub, username, session id).
-- [ ] Autorisierungsrichtlinien für geschützte Endpunkte definieren.
-- [ ] Endpoint GET /auth/me implementieren.
+- [x] JWT-Bearer-Auth in API konfigurieren.
+- [x] Claims-Design festlegen (sub, username, session id).
+- [x] Autorisierungsrichtlinien für geschützte Endpunkte definieren.
+- [x] Endpoint GET /auth/me implementieren.
 
 ---
 

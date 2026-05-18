@@ -16,6 +16,11 @@ namespace Zeiterfassung.Infrastructure.Repositories
             return await _context.RefreshTokens.FindAsync(id);
         }
 
+        public async Task<RefreshToken?> GetByTokenAsync(string token)
+        {
+            return await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.Token == token);
+        }
+
         public async Task AddAsync(RefreshToken token)
         {
             await _context.RefreshTokens.AddAsync(token);

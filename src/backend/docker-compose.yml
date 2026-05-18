@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   api:
     build:
@@ -9,9 +8,11 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Host=db;Database=zeiterfassung;Username=postgres;Password=postgres
-      - Jwt__Key=your_jwt_secret_key
-      - Jwt__Issuer=zeiterfassung
-      - Jwt__Audience=zeiterfassung_users
+      - Jwt__SecretKey=dev-super-secret-key-must-be-at-least-32-characters-long-for-hs256
+      - Jwt__Issuer=zeiterfassung-api
+      - Jwt__Audience=zeiterfassung-clients
+      - Jwt__AccessTokenExpirationMinutes=15
+      - Jwt__RefreshTokenExpirationDays=7
     depends_on:
       - db
     networks:
