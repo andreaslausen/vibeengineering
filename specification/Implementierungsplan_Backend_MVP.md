@@ -44,11 +44,11 @@ Schrittweise Umsetzung des Backend-MVP auf Basis der fachlichen, technischen und
 - [x] Projekt-Referenzen korrekt verdrahten.
 
 ### 1.2 Grundkonfiguration
-- [ ] Gemeinsame Build-Einstellungen definieren.
-- [ ] Nullable aktivieren.
-- [ ] Warnings as errors für produktive Projekte aktivieren.
-- [ ] Basiskonfiguration für appsettings erstellen.
-- [ ] Entwicklungs-Konfiguration ergänzen.
+****- [x] Gemeinsame Build-Einstellungen definieren.
+- [x] Nullable aktivieren.
+- [x] Warnings as errors für produktive Projekte aktivieren.
+- [x] Basiskonfiguration für appsettings erstellen.
+- [x] Entwicklungs-Konfiguration ergänzen.
 
 ### 1.3 Docker-Basis
 - [ ] Dockerfile für API-Projekt anlegen.

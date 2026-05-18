@@ -1,0 +1,29 @@
+# .NET Core
+bin/
+obj/
+
+# Visual Studio
+.vscode/
+.vs/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# npm packages
+node_modules/
+
+# Environment variables
+.env
+
+# JetBrains Rider
+.idea/
+*.iml
+
+# macOS
+.DS_Store
